@@ -11,14 +11,14 @@ const app = express();
 app.use(express.json());
 
 
-app.post("/welcome", auth, (req, res) => {
+app.post("/welcome", (req, res) => {
   res.status(200).send("Welcome 🙌 ");
 });
 
 
 // Register
 app.post("/register", async (req, res) => {
-    
+    res.set('Access-Control-Allow-Origin', '');
     try {
 
         const {email, password} = req.body;
